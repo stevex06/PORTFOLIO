@@ -12,101 +12,64 @@
 
 <style>
 
-
 *{
-
-margin:0;
-padding:0;
-box-sizing:border-box;
-
-font-family:'Segoe UI',Arial,sans-serif;
-
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Segoe UI',Arial,sans-serif;
 }
-
 
 
 body{
 
+    min-height:100vh;
 
-min-height:100vh;
+    background:
+    linear-gradient(
+        135deg,
+        #ffffff,
+        #fff1ee,
+        #c74634,
+        #7a1c16
+    );
 
+    background-size:400% 400%;
 
-background:
-
-linear-gradient(
-
-135deg,
-
-#f8f9fc,
-
-#ffffff,
-
-#ffe8e3,
-
-#7A1C16
-
-);
-
-
-
-background-size:400% 400%;
-
-
-animation:
-
-bgMove 15s ease infinite;
-
+    animation:bgMove 15s ease infinite;
 
 }
-
-
 
 
 
 @keyframes bgMove{
 
+    0%{
+        background-position:0% 50%;
+    }
 
-0%{
+    50%{
+        background-position:100% 50%;
+    }
 
-background-position:0% 50%;
-
-}
-
-
-50%{
-
-background-position:100% 50%;
-
-}
-
-
-100%{
-
-background-position:0% 50%;
+    100%{
+        background-position:0% 50%;
+    }
 
 }
-
-
-}
-
-
 
 
 
 
 .container{
 
+    max-width:1000px;
 
-max-width:1000px;
+    margin:40px auto;
 
-
-margin:40px auto;
-
-
-padding:20px;
-
+    padding:20px;
 
 }
+
 
 
 
@@ -117,86 +80,61 @@ padding:20px;
 .header{
 
 
-background:
+    background:
+
+    linear-gradient(
+        135deg,
+        #7A1C16,
+        #C74634
+    );
 
 
-linear-gradient(
+    padding:50px;
 
-135deg,
+    border-radius:25px 25px 0 0;
 
-#7A1C16,
+    color:white;
 
-#C74634
-
-);
+    text-align:center;
 
 
+    box-shadow:
 
-padding:50px;
-
-
-border-radius:25px 25px 0 0;
+    0 20px 50px rgba(122,28,22,.35);
 
 
-color:white;
+    animation:
 
-
-text-align:center;
-
-
-
-box-shadow:
-
-
-0 20px 50px rgba(122,28,22,.35);
-
-
-
-animation:
-
-
-slideDown 1s ease;
-
+    slideDown 1s ease;
 
 }
-
 
 
 
 
 @keyframes slideDown{
 
+    from{
 
-from{
+        opacity:0;
 
+        transform:
+        translateY(-60px);
 
-opacity:0;
-
-
-transform:
-
-translateY(-60px);
+    }
 
 
-}
+    to{
 
+        opacity:1;
 
+        transform:
+        translateY(0);
 
-to{
-
-
-opacity:1;
-
-
-transform:
-
-translateY(0);
-
+    }
 
 }
 
-
-}
 
 
 
@@ -204,19 +142,23 @@ translateY(0);
 .header h1{
 
 
-font-size:45px;
+    font-size:45px;
+
+    letter-spacing:3px;
 
 
-letter-spacing:3px;
+    text-shadow:
+
+    0 0 10px white,
+    0 0 30px #ffb4a8;
 
 
-animation:
+    animation:
 
-
-titleMove 3s infinite alternate;
-
+    titleMove 3s infinite alternate;
 
 }
+
 
 
 
@@ -224,33 +166,32 @@ titleMove 3s infinite alternate;
 @keyframes titleMove{
 
 
-from{
+    from{
 
-transform:translateY(0);
+        transform:
+        translateY(0);
+
+    }
+
+
+    to{
+
+        transform:
+        translateY(-10px);
+
+    }
 
 }
 
-
-to{
-
-transform:translateY(-8px);
-
-}
-
-
-}
 
 
 
 
 .header p{
 
+    font-size:20px;
 
-font-size:20px;
-
-
-margin-top:10px;
-
+    margin-top:10px;
 
 }
 
@@ -259,125 +200,78 @@ margin-top:10px;
 
 
 
-
-/* PROFILE AREA */
+/* PROFILE */
 
 
 .profile{
 
 
-background:white;
+    background:white;
 
 
-padding:45px;
+    padding:45px;
 
 
-text-align:center;
+    text-align:center;
 
 
-border-radius:0 0 25px 25px;
+    border-radius:
+
+    0 0 25px 25px;
 
 
-box-shadow:
+    box-shadow:
+
+    0 20px 40px rgba(0,0,0,.15);
 
 
-0 20px 40px rgba(0,0,0,.15);
-
-
-
-perspective:1000px;
-
-
-
-animation:
-
-
-fadeUp 1s ease;
+    perspective:1000px;
 
 
 }
 
 
-
-
-@keyframes fadeUp{
-
-
-from{
-
-opacity:0;
-
-
-transform:
-
-translateY(50px);
-
-
-}
-
-
-to{
-
-opacity:1;
-
-
-transform:
-
-translateY(0);
-
-
-}
-
-
-}
-
-
-
-
-
-
-
-/* 3D ROTATING IMAGE */
 
 
 .profile img{
 
 
-width:220px;
+    width:220px;
+
+    height:220px;
 
 
-height:220px;
+    border-radius:50%;
 
 
-border-radius:50%;
+    border:
+
+    8px solid #C74634;
 
 
-border:8px solid #C74634;
-
-
-object-fit:cover;
-
-
-
-box-shadow:
-
-
-0 0 30px rgba(199,70,52,.5);
+    object-fit:cover;
 
 
 
-transform-style:preserve-3d;
+    box-shadow:
+
+
+    0 0 30px rgba(199,70,52,.6);
 
 
 
-animation:
+    transform-style:preserve-3d;
 
 
-profileFlip 6s ease-in-out infinite;
 
+    animation:
+
+
+    profileFlip 6s infinite ease-in-out;
 
 
 }
+
 
 
 
@@ -387,74 +281,46 @@ profileFlip 6s ease-in-out infinite;
 
 0%{
 
+    transform:
 
-transform:
-
-
-rotateY(0deg)
-
-translateY(0);
-
+    rotateY(0deg)
+    translateY(0);
 
 }
 
 
 
-20%{
+25%{
 
 
-transform:
+    transform:
 
-
-rotateY(90deg)
-
-translateY(-10px);
-
+    rotateY(90deg)
+    translateY(-15px);
 
 }
 
 
 
-40%{
+50%{
 
 
-transform:
+    transform:
 
-
-rotateY(180deg)
-
-translateY(-15px);
-
+    rotateY(180deg)
+    translateY(-20px);
 
 }
 
 
 
-60%{
+75%{
 
 
-transform:
+    transform:
 
-
-rotateY(270deg)
-
-translateY(-10px);
-
-
-}
-
-
-
-80%{
-
-
-transform:
-
-
-rotateY(360deg)
-
-translateY(0);
-
+    rotateY(270deg)
+    translateY(-15px);
 
 }
 
@@ -463,19 +329,15 @@ translateY(0);
 100%{
 
 
-transform:
+    transform:
 
-
-rotateY(360deg)
-
-translateY(0);
-
+    rotateY(360deg)
+    translateY(0);
 
 }
 
 
 }
-
 
 
 
@@ -484,23 +346,19 @@ translateY(0);
 .profile img:hover{
 
 
-animation-play-state:paused;
+    animation-play-state:paused;
 
 
-box-shadow:
+    box-shadow:
+
+    0 0 60px #C74634;
 
 
-0 0 60px #C74634;
+    transform:
 
-
-transform:
-
-scale(1.1);
-
+    scale(1.1);
 
 }
-
-
 
 
 
@@ -509,13 +367,13 @@ scale(1.1);
 .profile h2{
 
 
-margin-top:25px;
+    margin-top:25px;
 
 
-font-size:36px;
+    font-size:36px;
 
 
-color:#C74634;
+    color:#C74634;
 
 
 }
@@ -526,17 +384,16 @@ color:#C74634;
 .position{
 
 
-font-size:20px;
+    margin-top:10px;
 
 
-color:#666;
+    font-size:20px;
 
 
-margin-top:10px;
+    color:#666;
 
 
 }
-
 
 
 
@@ -546,32 +403,25 @@ margin-top:10px;
 .badge{
 
 
-display:inline-block;
+    display:inline-block;
 
 
-margin-top:20px;
+    margin-top:20px;
 
 
-background:#FFF4F2;
+    padding:15px 30px;
 
 
-color:#C74634;
+    border-radius:50px;
 
 
-padding:15px 30px;
+    background:#FFF4F2;
 
 
-border-radius:50px;
+    color:#C74634;
 
 
-font-weight:bold;
-
-
-
-box-shadow:
-
-
-0 5px 20px rgba(199,70,52,.2);
+    font-weight:bold;
 
 
 }
@@ -582,99 +432,82 @@ box-shadow:
 
 
 
-/* ABOUT CARD */
+/* ABOUT */
 
 
 .card{
 
 
-background:white;
+    margin-top:30px;
 
 
-margin-top:30px;
+    background:white;
 
 
-padding:35px;
+    padding:35px;
 
 
-border-radius:22px;
+    border-radius:22px;
 
 
-box-shadow:
+    box-shadow:
+
+    0 15px 35px rgba(0,0,0,.15);
 
 
-0 15px 35px rgba(0,0,0,.1);
-
-
-
-transition:.5s;
-
-
-
-animation:
-
-
-fadeUp 1s ease;
+    transition:.5s;
 
 
 }
-
-
 
 
 
 .card:hover{
 
 
-transform:
+    transform:
+
+    translateY(-10px);
 
 
-translateY(-10px);
+    box-shadow:
 
-
-
-box-shadow:
-
-
-0 25px 50px rgba(199,70,52,.3);
+    0 25px 50px rgba(199,70,52,.35);
 
 
 }
-
-
 
 
 
 .card h2{
 
 
-color:#C74634;
+    color:#C74634;
 
 
-font-size:30px;
+    font-size:30px;
 
 
-margin-bottom:20px;
+    margin-bottom:20px;
 
 
 }
-
 
 
 
 .card p{
 
 
-font-size:17px;
+    color:#444;
 
 
-line-height:2;
+    font-size:17px;
 
 
-color:#444;
+    line-height:2;
 
 
-text-align:justify;
+    text-align:justify;
 
 
 }
@@ -685,25 +518,26 @@ text-align:justify;
 
 
 
-/* CONTACT BOX */
+/* CONTACT */
 
 
 .contact{
 
 
-display:flex;
+    display:flex;
 
 
-gap:25px;
+    gap:25px;
 
 
-flex-wrap:wrap;
+    flex-wrap:wrap;
 
 
-margin-top:30px;
+    margin-top:30px;
 
 
 }
+
 
 
 
@@ -711,33 +545,30 @@ margin-top:30px;
 .contact-box{
 
 
-flex:1;
+    flex:1;
 
 
-min-width:250px;
+    min-width:250px;
 
 
-background:white;
+    background:white;
 
 
-padding:30px;
+    padding:30px;
 
 
-border-radius:20px;
+    border-radius:20px;
 
 
-text-align:center;
+    text-align:center;
 
 
+    box-shadow:
 
-box-shadow:
-
-
-0 15px 30px rgba(0,0,0,.1);
+    0 15px 30px rgba(0,0,0,.12);
 
 
-
-transition:.5s;
+    transition:.5s;
 
 
 }
@@ -745,22 +576,19 @@ transition:.5s;
 
 
 
+
 .contact-box:hover{
 
 
-transform:
+    transform:
+
+    translateY(-15px)
+    scale(1.05);
 
 
-translateY(-15px)
+    box-shadow:
 
-scale(1.05);
-
-
-
-box-shadow:
-
-
-0 0 35px rgba(199,70,52,.4);
+    0 0 35px rgba(199,70,52,.5);
 
 
 }
@@ -771,44 +599,48 @@ box-shadow:
 .contact-box img{
 
 
-width:70px;
+    width:70px;
 
 
-height:70px;
+    height:70px;
 
 
-margin-bottom:15px;
+    object-fit:contain;
+
+
+    margin-bottom:15px;
 
 
 }
-
 
 
 
 .contact-box h3{
 
 
-color:#C74634;
+    color:#C74634;
 
 
-font-size:24px;
+    font-size:24px;
 
 
 }
-
 
 
 
 .contact-box p{
 
 
-margin-top:10px;
+    margin-top:10px;
 
 
-font-size:17px;
+    color:#444;
 
 
-color:#444;
+    font-size:17px;
+
+
+    line-height:1.8;
 
 
 }
@@ -816,55 +648,38 @@ color:#444;
 
 
 
-
-/* FOOTER */
 
 
 .footer{
 
 
-margin-top:35px;
+    margin-top:35px;
 
 
-padding:30px;
+    background:
+
+    linear-gradient(
+        135deg,
+        #2F2A29,
+        #44403E
+    );
 
 
-border-radius:20px;
+    padding:30px;
 
 
-text-align:center;
+    border-radius:20px;
 
 
-color:white;
+    color:white;
 
 
-
-background:
-
-
-linear-gradient(
-
-135deg,
-
-#2F2A29,
-
-#44403E
-
-);
+    text-align:center;
 
 
+    animation:
 
-box-shadow:
-
-
-0 20px 40px rgba(0,0,0,.3);
-
-
-
-animation:
-
-
-footerFloat 4s infinite alternate;
+    floatFooter 4s infinite alternate;
 
 
 }
@@ -872,24 +687,27 @@ footerFloat 4s infinite alternate;
 
 
 
-@keyframes footerFloat{
+
+@keyframes floatFooter{
 
 
-from{
+    from{
 
-transform:translateY(0);
+        transform:
+        translateY(0);
+
+    }
+
+
+    to{
+
+        transform:
+        translateY(-8px);
+
+    }
 
 }
 
-
-to{
-
-transform:translateY(-8px);
-
-}
-
-
-}
 
 
 
@@ -900,35 +718,31 @@ transform:translateY(-8px);
 
 .header h1{
 
-font-size:32px;
+    font-size:32px;
 
 }
-
 
 
 .profile img{
 
-width:170px;
+    width:170px;
 
-height:170px;
+    height:170px;
 
 }
-
 
 
 .contact-box{
 
-min-width:100%;
+    min-width:100%;
 
 }
 
 
 }
-
 
 
 </style>
-
 
 </head>
 
@@ -937,31 +751,21 @@ min-width:100%;
 <body>
 
 
-
-
 <div class="container">
 
 
 
 <div class="header">
 
-
 <h1>
-
 Meet Your Teacher
-
 </h1>
 
-
 <p>
-
 Oracle Database Programming
-
 </p>
 
-
 </div>
-
 
 
 
@@ -970,21 +774,18 @@ Oracle Database Programming
 <div class="profile">
 
 
-<img src="https://feuroosevelt.instructure.com/courses/30043/files/7939719/preview">
+<img src="NAPAROTA.jpg" alt="Steven P. Naparota">
+
 
 
 <h2>
-
 Steven P. Naparota
-
 </h2>
 
 
 
 <p class="position">
-
 Programming and Database Instructor
-
 </p>
 
 
@@ -993,12 +794,11 @@ Programming and Database Instructor
 <div class="badge">
 
 Bachelor of Vocational Teacher Education (BTVTED)
-
 <br>
-
 Major in Information and Communication Technology
 
 </div>
+
 
 
 </div>
@@ -1010,28 +810,23 @@ Major in Information and Communication Technology
 
 <div class="card">
 
-
 <h2>
-
 About Your Instructor
-
 </h2>
-
 
 
 <p>
 
-Welcome to the course! I am <b>Steven P. Naparota</b>, and you may call me <b>Sir Steve</b>. I graduated with a <b>Bachelor of Vocational Teacher Education (BTVTED)</b>, Major in <b>Information and Communication Technology (ICT)</b>, specializing in <b>Programming</b>.
+Welcome to the course! I am <b>Steven P. Naparota</b>, and you may call me <b>Sir Steve</b>. I graduated with a <b>Bachelor of Vocational Teacher Education (BTVTED)</b>, Major in <b>Information and Communication Technology (ICT)</b>, specializing in Programming.
 
 <br><br>
 
-My goal is to help you build a strong foundation in <b>computer programming</b> and <b>database management</b> by developing both technical knowledge and practical skills. Throughout this course, I will guide and support you as we explore concepts, solve problems, and apply what you learn through hands-on laboratory activities and practical exercises.
+My goal is to help you build a strong foundation in <b>computer programming</b> and <b>database management</b> by developing technical knowledge and practical skills through hands-on activities and real-world applications.
 
 </p>
 
 
 </div>
-
 
 
 
@@ -1043,50 +838,17 @@ My goal is to help you build a strong foundation in <b>computer programming</b> 
 
 <div class="contact-box">
 
-<img src="https://feuroosevelt.instructure.com/courses/30043/files/7939714/preview">
 
-<h3>
-
-Consultation Hours
-
-</h3>
-
-
-<p>
-
-Monday to Friday
-
-<br>
-
-1:00 PM – 5:00 PM
-
-</p>
-
-
-</div>
-
-
-
-
-
-
-<div class="contact-box">
-
-
-<img src="https://feuroosevelt.instructure.com/courses/30043/files/7939734/preview">
+<img src="OUTLOOK.png">
 
 
 <h3>
-
 Email Address
-
 </h3>
 
 
 <p>
-
 snaparota@feuroosevelt.edu.ph
-
 </p>
 
 
@@ -1096,24 +858,41 @@ snaparota@feuroosevelt.edu.ph
 
 
 
-
 <div class="contact-box">
 
 
-<img src="https://feuroosevelt.instructure.com/courses/30043/files/7939733/preview">
+<img src="MSTEAMS.jpg">
 
 
 <h3>
-
 MS Teams
-
 </h3>
 
 
 <p>
-
 Steven Naparota
+</p>
 
+
+</div>
+
+
+
+<div class="contact-box">
+
+
+<img src="OUTLOOK.png">
+
+
+<h3>
+Consultation Hours
+</h3>
+
+
+<p>
+Monday to Friday
+<br>
+1:00 PM – 5:00 PM
 </p>
 
 
@@ -1130,17 +909,11 @@ Steven Naparota
 
 <div class="footer">
 
-
 <h2>
-
 Looking forward to learning with you this semester!
-
 </h2>
 
-
 </div>
-
-
 
 
 
